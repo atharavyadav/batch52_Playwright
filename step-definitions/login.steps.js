@@ -17,14 +17,14 @@ BeforeAll(async function () {
     logger.info("Browser launched successfully.");
 });
 
-// After Hook: Take a screenshot on failure and close the browser
-AfterAll(async function (scenario) {
-    if (browser) {
-        logger.info("Closing the browser...");
-        await browser.close();
-        logger.info("Browser closed successfully.");
-    }
-});
+// // After Hook: Take a screenshot on failure and close the browser
+// AfterAll(async function (scenario) {
+//     if (browser) {
+//         logger.info("Closing the browser...");
+//         await browser.close();
+//         logger.info("Browser closed successfully.");
+//     }
+// });
 
 Given("the user is on the login page", async function () {
     logger.info("Navigating to the login page...");
@@ -58,4 +58,12 @@ When("the user enters user information {string} {string}", async function (usern
     await page.locator('input[name="password"]').fill('test123')
     await page.locator('input[name="confirmPassword"]').fill('test123');
     await page.getByRole('button', { name: 'Submit' }).click();
+  // Dynamically construct the XPath with the username
+  const usernamedata = await page.locator(`//tag[contains(text(), "Note: Your user name is ${username}")]`).textContent();
+  logger.info(`Fetched username data: ${usernamedata}`);
+  console.log(usernamedata);
+
+
+   // Note: Your user name is neelam123.
+
 });

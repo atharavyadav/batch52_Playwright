@@ -114,3 +114,22 @@
 2025-04-20 20:30:38 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
 2025-04-20 20:30:39 [INFO]: Email information filled successfully.
 2025-04-20 20:30:39 [INFO]: Filling user information: neelam123, test123
+2025-04-20 20:55:59 [INFO]: Launching the browser...
+2025-04-20 20:56:02 [INFO]: Browser launched successfully.
+2025-04-20 20:56:02 [INFO]: Navigating to the login page...
+2025-04-20 20:56:05 [INFO]: Navigated to the login page.
+2025-04-20 20:56:05 [INFO]: Filling contact information: testuser1, pass123, 19090, test@gmail.com
+2025-04-20 20:56:06 [INFO]: Contact information filled successfully.
+2025-04-20 20:56:06 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
+2025-04-20 20:56:06 [INFO]: Email information filled successfully.
+2025-04-20 20:56:06 [INFO]: Filling user information: neelam123, test123
+2025-04-20 20:56:11 [INFO]: Closing the browser...
+2025-04-20 20:57:08 [INFO]: Launching the browser...
+2025-04-20 20:57:13 [INFO]: Browser launched successfully.
+2025-04-20 20:57:13 [INFO]: Navigating to the login page...
+2025-04-20 20:57:15 [INFO]: Navigated to the login page.
+2025-04-20 20:57:16 [INFO]: Filling contact information: testuser1, pass123, 19090, test@gmail.com
+2025-04-20 20:57:16 [INFO]: Contact information filled successfully.
+2025-04-20 20:57:16 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
+2025-04-20 20:57:16 [INFO]: Email information filled successfully.
+2025-04-20 20:57:17 [INFO]: Filling user information: neelam123, test123
