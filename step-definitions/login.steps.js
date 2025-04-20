@@ -3,7 +3,7 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 const logger = require("../utils/logger"); // Import the logger
-
+const { expect } = require("@playwright/test");
 let browser, context, page;
 
 
@@ -53,17 +53,15 @@ When("the user enters email information {string} {string} {string} {string} {str
 
 
 When("the user enters user information {string} {string}", async function (username, password) {
+    //this.setTimeout(60000); // Set timeout to 60 seconds for this step
     logger.info(`Filling user information: ${username}, ${password}`);
-    await page.locator('#email').fill('neelam123');
-    await page.locator('input[name="password"]').fill('test123')
-    await page.locator('input[name="confirmPassword"]').fill('test123');
+    await page.locator('#email').fill(username);
+    await page.locator('input[name="password"]').fill(password);
+    await page.locator('input[name="confirmPassword"]').fill(password);
     await page.getByRole('button', { name: 'Submit' }).click();
-  // Dynamically construct the XPath with the username
-  const usernamedata = await page.locator(`//tag[contains(text(), "Note: Your user name is ${username}")]`).textContent();
-  logger.info(`Fetched username data: ${usernamedata}`);
-  console.log(usernamedata);
+    logger.info(`clicked the submit button`);
 
-
-   // Note: Your user name is neelam123.
-
+    const usernamedata = await page.locator(`//b[contains(text(), "Note: Your user name is ${username}")]`).textContent();
+    logger.info(`Fetched username data: ${usernamedata}`);
+    expect(usernamedata).toContain(`Note: Your user name is ${username}`);
 });
