@@ -221,3 +221,40 @@
 2025-04-20 21:29:55 [INFO]: Filling user information: neelam123, test123
 2025-04-20 21:29:56 [INFO]: clicked the submit button
 2025-04-20 21:29:57 [INFO]: Fetched username data:  Note: Your user name is neelam123.
+2025-04-20 21:37:19 [INFO]: Launching the browser...
+2025-04-20 21:37:22 [INFO]: Browser launched successfully.
+2025-04-20 21:37:22 [INFO]: Navigating to the login page...
+2025-04-20 21:37:25 [INFO]: Navigated to the login page.
+2025-04-20 21:37:25 [INFO]: Filling contact information: testuser1, pass123, 19090, test@gmail.com
+2025-04-20 21:37:25 [INFO]: Contact information filled successfully.
+2025-04-20 21:37:25 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
+2025-04-20 21:37:25 [INFO]: Email information filled successfully.
+2025-04-20 21:37:25 [INFO]: Filling user information: neelam123, test123
+2025-04-20 21:37:26 [INFO]: clicked the submit button
+2025-04-20 21:37:26 [INFO]: Fetched username data:  Note: Your user name is neelam123.
+2025-04-20 21:39:12 [INFO]: Launching the browser...
+2025-04-20 21:39:15 [INFO]: Browser launched successfully.
+2025-04-20 21:39:15 [INFO]: Navigating to the login page...
+2025-04-20 21:39:18 [INFO]: Navigated to the login page.
+2025-04-20 21:39:18 [INFO]: Filling contact information: testuser1, pass123, 19090, test@gmail.com
+2025-04-20 21:39:18 [INFO]: Contact information filled successfully.
+2025-04-20 21:39:18 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
+2025-04-20 21:39:18 [INFO]: Email information filled successfully.
+2025-04-20 21:39:18 [INFO]: Filling user information: neelam123, test123
+2025-04-20 21:39:20 [INFO]: clicked the submit button
+2025-04-20 21:39:20 [INFO]: Fetched username data:  Note: Your user name is neelam123.
+2025-04-20 21:39:20 [INFO]: Closing the browser...
+2025-04-20 21:39:21 [INFO]: Browser closed successfully.
+2025-04-20 21:46:21 [INFO]: Launching the browser...
+2025-04-20 21:46:25 [INFO]: Browser launched successfully.
+2025-04-20 21:46:25 [INFO]: Navigating to the login page...
+2025-04-20 21:46:27 [INFO]: Navigated to the login page.
+2025-04-20 21:46:28 [INFO]: Filling contact information: testuser1, pass123, 19090, test@gmail.com
+2025-04-20 21:46:28 [INFO]: Contact information filled successfully.
+2025-04-20 21:46:28 [INFO]: Filling email information: hinjewadi, pune, Maharashta, 411057, INDIA
+2025-04-20 21:46:28 [INFO]: Email information filled successfully.
+2025-04-20 21:46:28 [INFO]: Filling user information: neelam123, test123
+2025-04-20 21:46:30 [INFO]: clicked the submit button
+2025-04-20 21:46:30 [INFO]: Fetched username data:  Note: Your user name is neelam123.
+2025-04-20 21:46:30 [INFO]: Closing the browser...
+2025-04-20 21:46:31 [INFO]: Browser closed successfully.

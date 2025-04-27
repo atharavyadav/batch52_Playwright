@@ -1,38 +1,25 @@
-const { Given, When, Then, Before, After, BeforeAll, AfterAll } = require("@cucumber/cucumber");
-const { chromium } = require("playwright");
-const fs = require("fs");
-const path = require("path");
-const logger = require("../utils/logger"); // Import the logger
-const { expect } = require("@playwright/test");
-let browser, context, page;
+const { Given, When, Then, BeforeAll, AfterAll } = require("@cucumber/cucumber");
+const browserManager = require("../pages/utils/browserManager"); // Corrected path
+const logger = require("../utils/logger");
+const { expect } = require("assert");
 
-
-
-// Before Hook: Launch the browser before each scenario
 BeforeAll(async function () {
-    logger.info("Launching the browser...");
-    browser = await chromium.launch({ headless: false }); // Launch browser
-    context = await browser.newContext();
-    page = await context.newPage();
-    logger.info("Browser launched successfully.");
+    await browserManager.launchBrowser(); // Launch the browser
 });
 
-// // After Hook: Take a screenshot on failure and close the browser
-// AfterAll(async function (scenario) {
-//     if (browser) {
-//         logger.info("Closing the browser...");
-//         await browser.close();
-//         logger.info("Browser closed successfully.");
-//     }
-// });
+AfterAll(async function () {
+    await browserManager.closeBrowser(); // Close the browser
+});
 
 Given("the user is on the login page", async function () {
+    const page = browserManager.getPage(); // Get the page object
     logger.info("Navigating to the login page...");
     await page.goto("https://demo.guru99.com/test/newtours/register.php");
     logger.info("Navigated to the login page.");
 });
 
 When("the user enters contact information {string} {string} {string} {string}", async function (firstname, lastname, phone, email) {
+    const page = browserManager.getPage(); // Get the page object
     logger.info(`Filling contact information: ${firstname}, ${lastname}, ${phone}, ${email}`);
     await page.locator('input[name="firstName"]').fill(firstname);
     await page.locator('input[name="lastName"]').fill(lastname);
@@ -42,6 +29,7 @@ When("the user enters contact information {string} {string} {string} {string}", 
 });
 
 When("the user enters email information {string} {string} {string} {string} {string}", async function (address, city, state, postalcode, country) {
+    const page = browserManager.getPage(); // Get the page object
     logger.info(`Filling email information: ${address}, ${city}, ${state}, ${postalcode}, ${country}`);
     await page.locator('input[name="address1"]').fill(address);
     await page.locator('input[name="city"]').fill(city);
@@ -51,9 +39,8 @@ When("the user enters email information {string} {string} {string} {string} {str
     logger.info("Email information filled successfully.");
 });
 
-
 When("the user enters user information {string} {string}", async function (username, password) {
-    //this.setTimeout(60000); // Set timeout to 60 seconds for this step
+    const page = browserManager.getPage(); // Get the page object
     logger.info(`Filling user information: ${username}, ${password}`);
     await page.locator('#email').fill(username);
     await page.locator('input[name="password"]').fill(password);
