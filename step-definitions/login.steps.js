@@ -1,8 +1,7 @@
 const { Given, When, Then, BeforeAll, AfterAll } = require("@cucumber/cucumber");
 const browserManager = require("../pages/utils/browserManager");
 const logger = require("../utils/logger");
-const { expect } = require("assert");
-const registerPages = require("../pages/utils/register.pages"); // Import RegisterPages
+const Rsgisterpage = require("../pages/utils/register.pages")
 
 BeforeAll(async function () {
     await browserManager.launchBrowser(); // Launch the browser
@@ -13,38 +12,18 @@ AfterAll(async function () {
 });
 
 Given("the user is on the login page", async function () {
-    const page = browserManager.getPage(); // Get the page object
-    logger.info("Navigating to the login page...");
-    await page.goto("https://demo.guru99.com/test/newtours/register.php");
-    logger.info("Navigated to the login page.");
+    await Rsgisterpage.navigateToLoginPage(); // Call the method from LoginPages
 });
 
 When("the user enters contact information {string} {string} {string} {string}", async function (firstname, lastname, phone, email) {
-   
-    registerPages.contactInformation(firstname, lastname, phone, email)
+    await Rsgisterpage.enterContactInformation(firstname, lastname, phone, email); // Call the method from LoginPages
 });
 
 When("the user enters email information {string} {string} {string} {string} {string}", async function (address, city, state, postalcode, country) {
-    const page = browserManager.getPage(); // Get the page object
-    logger.info(`Filling email information: ${address}, ${city}, ${state}, ${postalcode}, ${country}`);
-    await page.locator(registerPages.addressInput).fill(address);
-    await page.locator(registerPages.cityInput).fill(city);
-    await page.locator(registerPages.stateInput).fill(state);
-    await page.locator(registerPages.postalCodeInput).fill(postalcode);
-    await page.locator(registerPages.countryDropdown).selectOption(country);
-    logger.info("Email information filled successfully.");
+    await Rsgisterpage.enterEmailInformation(address, city, state, postalcode, country); // Call the method from LoginPages
 });
 
-When("the user enters user information {string} {string}", async function (username, password) {
-    const page = browserManager.getPage(); // Get the page object
-    logger.info(`Filling user information: ${username}, ${password}`);
-    await page.locator(registerPages.usernameInput).fill(username);
-    await page.locator(registerPages.passwordInput).fill(password);
-    await page.locator(registerPages.confirmPasswordInput).fill(password);
-    await page.locator(registerPages.submitButton).click();
-    logger.info("Clicked the submit button.");
-
-    const usernamedata = await page.locator(`${registerPages.usernameConfirmationText}[contains(text(), "${username}")]`).textContent();
-    logger.info(`Fetched username data: ${usernamedata}`);
-    expect(usernamedata).toContain(`Note: Your user name is ${username}`);
+When("the user Rsgisterpage user information {string} {string}", async function (username, password) {
+    await loginPages.enterUserInformation(username, password); 
+    await Rsgisterpage.verifyUsername(username); // Call the method from LoginPages// Call the method from LoginPages
 });
