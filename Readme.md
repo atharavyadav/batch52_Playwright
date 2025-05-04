@@ -60,3 +60,15 @@ git push -u origin main
 git remote add origin https://github.com/atharavyadav/batch52_Playwright.git
 git branch -M main
 git push -u origin main
+
+
+
+*************this is just one time activity***************************
+git branch "give any name"
+git checout "the name u have above"
+
+
+**********************what to do if u get error while taking pul*************
+git add --all
+git commit -am "any message"
+git pull orgin main

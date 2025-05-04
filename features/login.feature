@@ -12,12 +12,12 @@ Feature: Login to Register Page
     When the user enters email information "<address>" "<city>" "<state>" "<postalcode>" "<country>"
 
     Examples:
-      | address        | city | state      | postalcode | country |
+      | address   | city | state      | postalcode | country |
       | hinjewadi | pune | Maharashta |     411057 | INDIA   |
 
   Scenario Outline: User navigates to the register page and fills user Information
     When the user enters user information "<username>" "<password>"
 
     Examples:
-      | username  | password    |
-      | neelam123 | test123 |
+      | username  | password |
+      | neelam123 | test123  |
