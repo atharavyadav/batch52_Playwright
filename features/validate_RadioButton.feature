@@ -7,4 +7,19 @@ Feature: Validate Radio Button Functionality
 
  Examples:
         |RadioButton|assertion|
-        |Radio1|True|
+        |radio1|True|
+        # |radio2|True|
+        # |radio3|True|
+
+  
+  Scenario Outline: Select the dropdown value
+  Given Navigate to the Radio Button
+  When dropdown value is selected "<dropdown>"
+
+ Examples:
+        |dropdown|
+        |Option1|
+        |Option2|
+        |Option3|
+
+ 
