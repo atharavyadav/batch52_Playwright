@@ -7,8 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
-  },
+  "test": "cucumber-js"
+},
   "dependencies": {
     "@cucumber/cucumber": "^11.2.0",
     "@playwright/test": "^1.52.0",
