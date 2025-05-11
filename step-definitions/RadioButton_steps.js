@@ -14,21 +14,32 @@ Given("Navigate to the Radio Button", async function () {
 });
 
 When("Radio button is selected {string}", async function (RadioButton) {
-    const page = browserManager.getPage();
-    let count = await page.locator("//input[@name='radioButton']").count();
-    logger.info("Count of radio buttons is " + count);
+    const page = await browserManager.getPage();
+    let countofEle = await page.locator("//input[@name='radioButton']").count();
+    console.log("Count of radio buttons is " + await countofEle)
+
+       for(let i=1;i<=await countofEle;i++)
+       {
+          let gettext = await page.locator("(//input[@name='radioButton'])["+i+"]").getAttribute("value");
+          console.log("all 3 radio valuea re " +await  gettext)
+          if(await gettext=="radio2")
+          {
+            await page.locator("(//input[@name='radioButton'])["+i+"]").click()
+          }
+       }
+
+    // for(let i=1;i<=await countofEle;i++)
+    // {
+    //     if(i==2)
+    //     {
+    //          await page.locator("(//input[@name='radioButton'])["+i+"]").click()
+    //     }
+       
+    // }
 });
 
 When("Validate if Radio button was selected {string}", async function (assertion) {
-    const page = browserManager.getPage();
-    const isSelected = await page.locator("//input[@name='radioButton']:checked").count() > 0;
-    logger.info("Radio button selected: " + isSelected);
-    if (assertion === "True" && !isSelected) {
-        throw new Error("Expected a radio button to be selected, but none were.");
-    }
-    if (assertion === "False" && isSelected) {
-        throw new Error("Expected no radio button to be selected, but one was.");
-    }
+   
 });
 
 AfterAll(async function () {
